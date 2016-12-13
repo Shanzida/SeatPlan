@@ -63,6 +63,7 @@ public class CourseStdFl extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
@@ -169,7 +170,7 @@ public class CourseStdFl extends javax.swing.JFrame {
         getContentPane().add(jTextField2);
         jTextField2.setBounds(410, 220, 90, 30);
         getContentPane().add(jXDatePicker1);
-        jXDatePicker1.setBounds(410, 150, 108, 22);
+        jXDatePicker1.setBounds(410, 150, 110, 22);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -188,6 +189,14 @@ public class CourseStdFl extends javax.swing.JFrame {
 
         jMenuItem3.setText("Update");
         jMenu1.add(jMenuItem3);
+
+        jMenuItem6.setText("Exam Routine");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem6);
 
         jMenuBar1.add(jMenu1);
 
@@ -296,6 +305,12 @@ public class CourseStdFl extends javax.swing.JFrame {
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        new Exam_routine();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -420,6 +435,7 @@ public class CourseStdFl extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
