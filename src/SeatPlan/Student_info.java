@@ -7,6 +7,16 @@ package SeatPlan;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +28,7 @@ public class Student_info extends javax.swing.JFrame {
      * Creates new form Entry
      */
     public Student_info() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -36,48 +47,137 @@ public class Student_info extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jC = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jComboBox5 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Spring", "Summer", "Fall" }));
+        getContentPane().add(jC);
+        jC.setBounds(130, 70, 100, 30);
+
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Student Info");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(220, 20, 270, 34);
+        jLabel10.setBounds(200, 0, 270, 51);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Upload .CSV File");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 90, 130, 20);
+        jLabel2.setBounds(50, 170, 120, 20);
+
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(300, 70, 100, 30);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Year");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(250, 80, 31, 17);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Title");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(240, 120, 40, 17);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Browes...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 90, 110, 30);
+        jButton1.setBounds(170, 170, 100, 30);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Semester ");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(50, 80, 70, 17);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Section");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(50, 120, 70, 20);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Course_Code");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(430, 70, 110, 20);
+
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(130, 120, 90, 30);
+
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(300, 120, 360, 30);
+
+        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(300, 170, 360, 30);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("save");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
-        jButton2.setBounds(250, 150, 80, 25);
+        jButton2.setBounds(550, 240, 80, 25);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        jComboBox5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox5);
+        jComboBox5.setBounds(550, 70, 100, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Nice1.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -10, 850, 330);
+        jLabel1.setBounds(0, -50, 780, 500);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(640, 110, 0, 2);
 
@@ -96,14 +196,6 @@ public class Student_info extends javax.swing.JFrame {
                 jMenu1MenuSelected(evt);
             }
         });
-
-        jMenuItem2.setText("New Course");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
 
         jMenuItem6.setText("Exam Routine");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +227,18 @@ public class Student_info extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu2);
 
+        jMenu6.setText("LogOut");
+        jMenu6.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu6MenuSelected(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -163,18 +267,113 @@ public class Student_info extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenu2MenuSelected
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        new Semester();
-        this.dispose();
-
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         new Exam_routine();
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //new choose();
+        JFileChooser jFileChooser = new JFileChooser();
+        int result = jFileChooser.showOpenDialog(new JFrame());
+        File selectedFile = jFileChooser.getSelectedFile();
+        String filepatgh=selectedFile.getAbsolutePath();
+        System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        jTextField3.setText(filepatgh);
+        //new ExcelToDb1(selectedFile.getAbsolutePath());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+        try{
+            Connection con=DBConnection.connect();
+            Statement st=con.createStatement();
+            String course_code=(String)jComboBox5.getSelectedItem();
+            String msql="Select course_title from course_table where course_code='"+course_code+"'";
+            ResultSet rs=st.executeQuery(msql);
+            while(rs.next()){
+                String t=rs.getString(1);
+                jTextField1.setText(t);
+            }rs.close();
+            st.close();
+            con.close();
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void jMenu6MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu6MenuSelected
+        // TODO add your handling code here:
+        new HomePage();
+        this.dispose();
+    }//GEN-LAST:event_jMenu6MenuSelected
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String semester =(String)jC.getSelectedItem();
+        String section=jTextField2.getText();
+        //String Department =jTextField4.getText();
+        String Year=(String)jComboBox2.getSelectedItem();
+        String Course_code=(String)jComboBox5.getSelectedItem();
+
+        if(semester.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Semester is mandatory.");
+            return;
+       }
+       if(Year.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Year is mandatory.");
+            return;
+       }
+       if(Course_code.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Course code is mandatory.");
+            return;
+       }
+       if(section.equals("")){
+            JOptionPane.showMessageDialog(this, "Section is mandatory.");
+            return;
+        }
+       if(jTextField3.getText() == null || jTextField3.getText().equals("") || !jTextField3.getText().contains(".csv")){
+            JOptionPane.showMessageDialog(this, "Please browse the csv file.");
+            return;
+       }
+       try{
+           new ExcelToDb1(jTextField3.getText(),semester,section,Year,Course_code);
+           
+       }
+       catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+         int i;
+          for(i=2016;i<=2040;i++){
+          jComboBox2.addItem(""+i);
+        }
+        try{
+
+        Connection con=DBConnection.connect();
+        Statement st=con.createStatement();
+        String msql="Select course_code from exam_info";
+        ResultSet rs=st.executeQuery(msql);
+        while(rs.next()){
+           String t=rs.getString(1);
+           jComboBox5.addItem(t);
+        }
+        rs.close();
+        st.close();
+        con.close();
+       }
+       catch(Exception e){
+           e.printStackTrace();
+           
+       }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -217,16 +416,27 @@ public class Student_info extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    public static javax.swing.JComboBox jC;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

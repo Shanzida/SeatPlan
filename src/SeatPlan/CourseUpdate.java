@@ -21,6 +21,7 @@ public class CourseUpdate extends javax.swing.JFrame {
      * Creates new form Semester
      */
     public CourseUpdate() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -85,7 +86,7 @@ public class CourseUpdate extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel10.setText("Update Course of Semester");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(189, 26, 300, 34);
+        jLabel10.setBounds(189, 26, 350, 34);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Submit");

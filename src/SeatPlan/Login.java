@@ -22,6 +22,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -51,6 +52,8 @@ public class Login extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -63,7 +66,7 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Passward");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(20, 150, 66, 17);
+        jLabel8.setBounds(20, 160, 66, 17);
 
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +75,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(110, 120, 380, 23);
+        jTextField6.setBounds(110, 120, 380, 30);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Login");
@@ -82,7 +85,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(329, 192, 120, 25);
+        jButton1.setBounds(340, 210, 120, 25);
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel10.setText("User Login");
@@ -96,7 +99,7 @@ public class Login extends javax.swing.JFrame {
 
         jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(110, 150, 380, 23);
+        jPasswordField1.setBounds(110, 160, 380, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -128,6 +131,18 @@ public class Login extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu4.setText("About");
+
+        jMenuItem3.setText("About Developer");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem3);
+
+        jMenuItem2.setText("About Software");
+        jMenu4.add(jMenuItem2);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -147,10 +162,13 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "User_Name is mandatory.");
             return;
         }
+        if(!User_Name.equals("")){
+
        if(Password.equals("")){
             JOptionPane.showMessageDialog(this, "Password is mandatory.");
             return;
        }
+          }
        try{
             Connection con=DBConnection.connect();
            // int id=0;
@@ -162,21 +180,23 @@ public class Login extends javax.swing.JFrame {
             while(rs.next()){
                 // id=rs.getInt(1);
                  user=rs.getString(1);
-                 pass=rs.getString(2);
+                 pass=rs.getString(3);
                  //jTextField1.setText(User_Name);
             }
             rs.close();
             stmt.close();
             if(User_Name.equals(user) && Password.equals(pass))
                         {
-                            //JOptionPane.showMessageDialog(null,"  Welcome");                       
+                             //JOptionPane.showMessageDialog(null,"  Welcome");                       
                              new Entry();
+                             this.dispose();
                         }
                         else
                         {
                     
                                 JOptionPane.showMessageDialog(null,"Invalid User Name and Password");
                                 new Login();
+                                this.dispose();
                                 
 
                         }
@@ -197,6 +217,11 @@ public class Login extends javax.swing.JFrame {
         new Registration();
         this.dispose();
     }//GEN-LAST:event_jMenu2MenuSelected
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        new Developer();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
      
     /**
      * @param args the command line arguments
@@ -244,6 +269,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables

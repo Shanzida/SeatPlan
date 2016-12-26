@@ -18,6 +18,7 @@ public class Entry extends javax.swing.JFrame {
      * Creates new form Entry
      */
     public Entry() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -41,26 +42,29 @@ public class Entry extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel10.setText("Welcome To Seatplan ");
+        jLabel10.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel10.setText("To Seatplan ");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(150, 20, 270, 34);
+        jLabel10.setBounds(370, 210, 282, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/welcome_884222262.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -10, 850, 330);
+        jLabel1.setBounds(0, -10, 740, 430);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(640, 110, 0, 2);
 
@@ -79,14 +83,6 @@ public class Entry extends javax.swing.JFrame {
                 jMenu1MenuSelected(evt);
             }
         });
-
-        jMenuItem2.setText("New Course");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
 
         jMenuItem5.setText("Student Info");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +122,28 @@ public class Entry extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu2);
 
+        jMenu4.setText("About");
+
+        jMenuItem4.setText("About Developer");
+        jMenu4.add(jMenuItem4);
+
+        jMenuItem7.setText("About Software");
+        jMenu4.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu6.setText("LogOut");
+        jMenu6.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu6MenuSelected(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -154,13 +172,6 @@ public class Entry extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenu2MenuSelected
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        new Semester();
-        this.dispose();
-
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         new Exam_routine();
@@ -172,6 +183,12 @@ public class Entry extends javax.swing.JFrame {
         new Student_info();
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenu6MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu6MenuSelected
+        // TODO add your handling code here:
+        new HomePage();
+        this.dispose();
+    }//GEN-LAST:event_jMenu6MenuSelected
 
     /**
      * @param args the command line arguments
@@ -214,12 +231,15 @@ public class Entry extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

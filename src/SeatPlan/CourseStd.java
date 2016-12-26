@@ -21,6 +21,7 @@ public class CourseStd extends javax.swing.JFrame {
      * Creates new form Semester
      */
     public CourseStd() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -53,14 +54,16 @@ public class CourseStd extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         jButton1.setText("Save");
@@ -98,12 +101,12 @@ public class CourseStd extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(470, 220, 80, 25);
+        jButton2.setBounds(490, 220, 80, 25);
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Spring", "Summer", "Fall" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(120, 70, 100, 30);
+        jComboBox1.setBounds(120, 70, 120, 30);
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
@@ -128,7 +131,7 @@ public class CourseStd extends javax.swing.JFrame {
         jComboBox5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
         getContentPane().add(jComboBox5);
-        jComboBox5.setBounds(120, 110, 100, 30);
+        jComboBox5.setBounds(120, 110, 120, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Course_Code");
@@ -147,7 +150,9 @@ public class CourseStd extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Date");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(350, 160, 40, 20);
+        jLabel7.setBounds(390, 160, 40, 20);
+        getContentPane().add(jXDatePicker1);
+        jXDatePicker1.setBounds(460, 160, 130, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -155,14 +160,6 @@ public class CourseStd extends javax.swing.JFrame {
         jLabel3.setBounds(0, 0, 740, 315);
 
         jMenu1.setText("Entry");
-
-        jMenuItem2.setText("New_Course");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Update");
         jMenu1.add(jMenuItem3);
@@ -183,9 +180,26 @@ public class CourseStd extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem6);
 
+        jMenuItem2.setText("New_Course");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Arrangement");
+
+        jMenuItem4.setText("New_Course");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem4);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Report");
@@ -303,6 +317,10 @@ public class CourseStd extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,8 +409,10 @@ public class CourseStd extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JTextField jTextField1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     // End of variables declaration//GEN-END:variables
 }

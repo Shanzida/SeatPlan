@@ -23,7 +23,7 @@ public class CourseSemi extends javax.swing.JFrame {
 
     
     public CourseSemi(String year,String sem,String exam) {
-
+        super("Examination Seating Management System");
         initComponents();
                   int i;
           for(i=2017;i<=2040;i++){
@@ -63,6 +63,7 @@ public class CourseSemi extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -100,7 +101,7 @@ public class CourseSemi extends javax.swing.JFrame {
         jC2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jC2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Spring", "Summer", "Fall" }));
         getContentPane().add(jC2);
-        jC2.setBounds(150, 90, 100, 30);
+        jC2.setBounds(140, 100, 90, 30);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setText("Submit");
@@ -145,26 +146,28 @@ public class CourseSemi extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox5);
-        jComboBox5.setBounds(160, 150, 100, 30);
+        jComboBox5.setBounds(140, 140, 100, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Course_Code");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 150, 130, 20);
+        jLabel4.setBounds(10, 140, 130, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Title");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(270, 150, 60, 22);
+        jLabel6.setBounds(350, 150, 60, 22);
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(330, 150, 330, 30);
+        jTextField1.setBounds(400, 150, 330, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, -5, 740, 315);
+        jLabel3.setBounds(0, 0, 740, 315);
+        getContentPane().add(jXDatePicker1);
+        jXDatePicker1.setBounds(0, 0, 110, 22);
 
         jMenu1.setText("Entry");
 
@@ -183,9 +186,9 @@ public class CourseSemi extends javax.swing.JFrame {
 
         jMenu2.setText("Arrangement");
         jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
                 jMenu2MenuSelected(evt);
@@ -356,5 +359,6 @@ public class CourseSemi extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JTextField jTextField1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     // End of variables declaration//GEN-END:variables
 }

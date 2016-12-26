@@ -7,6 +7,12 @@ package SeatPlan;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.util.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +24,7 @@ public class Arrangement_Student extends javax.swing.JFrame {
      * Creates new form Arrangement_Student
      */
     public Arrangement_Student() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -36,42 +43,190 @@ public class Arrangement_Student extends javax.swing.JFrame {
     private void initComponents() {
 
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
+        jComboBox5 = new javax.swing.JComboBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jComboBox1 = new javax.swing.JComboBox();
+        jComboBox2 = new javax.swing.JComboBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jLabel8 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
-        jButton1.setText("Save");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(360, 230, 57, 23);
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(330, 130, 60, 30);
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Section");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(280, 130, 40, 20);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Course_Code");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(60, 130, 110, 20);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Room_No");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(60, 90, 70, 17);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Save");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(530, 230, 100, 25);
+
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Arrangement Of Student");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(130, 10, 320, 34);
+        jLabel10.setBounds(120, 10, 530, 51);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Column");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(440, 130, 60, 20);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Shift");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(280, 90, 50, 20);
+        getContentPane().add(jXDatePicker1);
+        jXDatePicker1.setBounds(510, 80, 130, 30);
+
+        jComboBox5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox5);
+        jComboBox5.setBounds(160, 130, 110, 30);
+
+        jCheckBox3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCheckBox3.setText("C-3");
+        getContentPane().add(jCheckBox3);
+        jCheckBox3.setBounds(580, 130, 51, 25);
+
+        jCheckBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCheckBox1.setText("C-1");
+        getContentPane().add(jCheckBox1);
+        jCheckBox1.setBounds(510, 130, 50, 25);
+
+        jCheckBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCheckBox2.setText("C-2");
+        getContentPane().add(jCheckBox2);
+        jCheckBox2.setBounds(510, 160, 51, 25);
+
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(160, 80, 100, 30);
+
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Day", "Evening" }));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(330, 80, 110, 30);
+
+        jCheckBox4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCheckBox4.setText("C-4");
+        getContentPane().add(jCheckBox4);
+        jCheckBox4.setBounds(580, 160, 51, 25);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Date");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(460, 90, 40, 17);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Nice1.jpg"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 860, 315);
+        jLabel6.setBounds(0, -10, 780, 460);
 
         jMenu1.setText("Entry");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jMenu1MouseReleased(evt);
+            }
+        });
+        jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu1MenuSelected(evt);
+            }
+        });
 
-        jMenuItem1.setText("New_Course");
-        jMenu1.add(jMenuItem1);
+        jMenuItem5.setText("Student Info");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
 
-        jMenuItem2.setText("Update");
-        jMenu1.add(jMenuItem2);
+        jMenuItem6.setText("Exam Routine");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem6);
+
+        jMenuItem3.setText("Update");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
@@ -81,10 +236,304 @@ public class Arrangement_Student extends javax.swing.JFrame {
         jMenu3.setText("Report");
         jMenuBar1.add(jMenu3);
 
+        jMenu6.setText("LogOut");
+        jMenu6.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu6MenuSelected(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
+
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+        try{
+            Connection con=DBConnection.connect();
+            Statement st=con.createStatement();
+            String course_code=(String)jComboBox5.getSelectedItem();
+            String msql="Select course_title from course_table where course_code='"+course_code+"'";
+            ResultSet rs=st.executeQuery(msql);
+            while(rs.next()){
+                String t=rs.getString(1);
+               // jTextField1.setText(t);
+            }rs.close();
+            st.close();
+            con.close();
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jMenu6MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu6MenuSelected
+        // TODO add your handling code here:
+        new HomePage();
+        this.dispose();
+    }//GEN-LAST:event_jMenu6MenuSelected
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new Student_info();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        new Exam_routine();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        // System.out.println("Hiiii");
+        new CourseUpdate();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+   
+    private void jMenu1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1MouseReleased
+
+    private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
+        // TODO add your handling code here:
+        //new Semester();
+        //  this.dispose();
+    }//GEN-LAST:event_jMenu1MenuSelected
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String Room_No =(String)jComboBox1.getSelectedItem();
+        int roomNo=Integer.parseInt(Room_No);
+        String section=jTextField2.getText();
+        boolean col1 =jCheckBox1.isSelected();
+        boolean col2 =jCheckBox2.isSelected();
+        boolean col3 =jCheckBox3.isSelected();
+        boolean col4 =jCheckBox4.isSelected();
+        Date date=jXDatePicker1.getDate();
+        String Shift=(String)jComboBox2.getSelectedItem();
+        String Course_code=(String)jComboBox5.getSelectedItem();
+
+          // java.util.Date utilDate = new java.util.Date();
+    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+    System.out.println("utilDate:" + date);
+    System.out.println("sqlDate:" + sqlDate);
+    
+        if(Room_No.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Room No is mandatory.");
+            return;
+       }
+       if(Shift.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Shift is mandatory.");
+            return;
+       }
+       if(Course_code.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Course code is mandatory.");
+            return;
+       }
+       if(section.equals("")){
+            JOptionPane.showMessageDialog(this, "Section is mandatory.");
+            return;
+        }
+       try{
+           Connection con=DBConnection.connect();
+           
+            Statement st=con.createStatement();
+            String course_code=(String)jComboBox5.getSelectedItem();
+            String msql="SELECT ID FROM `studentinfo` where course_code='"+course_code+"' and sec="+section;
+            ResultSet rs=st.executeQuery(msql);
+            while(rs.next()){
+                String id=rs.getString(1);
+                int row_no=0;
+                Statement stmt=con.createStatement();
+                String msql1="SELECT row_no FROM `room_info` where room_no="+Room_No;
+                ResultSet rs1=stmt.executeQuery(msql1);
+                while(rs1.next()){
+                    row_no=rs1.getInt(1);
+                }
+                rs1.close();
+                stmt.close();
+                //for(int c=1;c<=4;c++){
+                if(col1 == true){
+                    int column=1;
+                    String s_id="";
+                   for(int r=1;r<=row_no;r++){
+                        Statement stmt1=con.createStatement();
+                        String msql2="SELECT id FROM `arrangement` where room_no="+Room_No+" and column_no="+column+" and row_no="+r;
+                        ResultSet rs2=stmt1.executeQuery(msql2);
+                        while(rs2.next()){
+                            s_id=rs2.getString(1);
+                        }
+                        if(!s_id.equals("")){
+                            continue;
+                        }
+                        else{
+                            String sql="INSERT INTO `arrangement`(`room_no`, `ID`,section,shift,date,course_code,column_no,row_no) VALUES (?, ?, ?,?,?,?,?,?)";
+                            PreparedStatement pstmt=con.prepareStatement(sql);
+                            pstmt.setInt(1,roomNo);
+                             pstmt.setString(2,id);
+                             pstmt.setString(3,section);
+                             pstmt.setString(4,Shift);
+                             pstmt.setDate(5, sqlDate);
+                             pstmt.setString(6,Course_code);
+                             pstmt.setInt(7,column);
+                             pstmt.setInt(8,r);
+                            int a =pstmt.executeUpdate();
+                            pstmt.close();
+                        }
+                        rs2.close();
+                        stmt1.close();
+                   } 
+                }
+                if(col2 == true){
+                    int column=2;
+                    String s_id="";
+                   for(int r=1;r<=row_no;r++){
+                        Statement stmt1=con.createStatement();
+                        String msql2="SELECT id FROM `arrangement` where room_no="+Room_No+" and column_no="+column+" and row_no="+r;
+                        ResultSet rs2=stmt1.executeQuery(msql2);
+                        while(rs2.next()){
+                            s_id=rs2.getString(1);
+                        }
+                        if(!s_id.equals("")){
+                            continue;
+                        }
+                        else{
+                            String sql="INSERT INTO `arrangement`(`room_no`, `ID`,section,shift,date,course_code,column_no,row_no) VALUES (?, ?, ?,?,?,?,?,?)";
+                            PreparedStatement pstmt=con.prepareStatement(sql);
+                            pstmt.setInt(1,roomNo);
+                             pstmt.setString(2,id);
+                             pstmt.setString(3,section);
+                             pstmt.setString(4,Shift);
+                             pstmt.setDate(5, sqlDate);
+                             pstmt.setString(6,Course_code);
+                             pstmt.setInt(7,column);
+                             pstmt.setInt(8,r);
+                            int a =pstmt.executeUpdate();
+                            pstmt.close();
+                        }
+                        rs2.close();
+                        stmt1.close();
+                   } 
+                }
+                if(col3 == true){
+                    int column=3;
+                    String s_id="";
+                   for(int r=1;r<=row_no;r++){
+                        Statement stmt1=con.createStatement();
+                        String msql2="SELECT id FROM `arrangement` where room_no="+Room_No+" and column_no="+column+" and row_no="+r;
+                        ResultSet rs2=stmt1.executeQuery(msql2);
+                        while(rs2.next()){
+                            s_id=rs2.getString(1);
+                        }
+                        if(!s_id.equals("")){
+                            continue;
+                        }
+                        else{
+                            String sql="INSERT INTO `arrangement`(`room_no`, `ID`,section,shift,date,course_code,column_no,row_no) VALUES (?, ?, ?,?,?,?,?,?)";
+                            PreparedStatement pstmt=con.prepareStatement(sql);
+                            pstmt.setInt(1,roomNo);
+                             pstmt.setString(2,id);
+                             pstmt.setString(3,section);
+                             pstmt.setString(4,Shift);
+                             pstmt.setDate(5, sqlDate);
+                             pstmt.setString(6,Course_code);
+                             pstmt.setInt(7,column);
+                             pstmt.setInt(8,r);
+                            int a =pstmt.executeUpdate();
+                            pstmt.close();
+                        }
+                        rs2.close();
+                        stmt1.close();
+                   } 
+                }
+                if(col4 == true){
+                    int column=4;
+                    String s_id="";
+                   for(int r=1;r<=row_no;r++){
+                        Statement stmt1=con.createStatement();
+                        String msql2="SELECT id FROM `arrangement` where room_no="+Room_No+" and column_no="+column+" and row_no="+r;
+                        ResultSet rs2=stmt1.executeQuery(msql2);
+                        while(rs2.next()){
+                            s_id=rs2.getString(1);
+                        }
+                        if(!s_id.equals("")){
+                            continue;
+                        }
+                        else{
+                            String sql="INSERT INTO `arrangement`(`room_no`, `ID`,section,shift,date,course_code,column_no,row_no) VALUES (?, ?, ?,?,?,?,?,?)";
+                            PreparedStatement pstmt=con.prepareStatement(sql);
+                            pstmt.setInt(1,roomNo);
+                             pstmt.setString(2,id);
+                             pstmt.setString(3,section);
+                             pstmt.setString(4,Shift);
+                             pstmt.setDate(5, sqlDate);
+                             pstmt.setString(6,Course_code);
+                             pstmt.setInt(7,column);
+                             pstmt.setInt(8,r);
+                            int a =pstmt.executeUpdate();
+                            pstmt.close();
+                        }
+                        rs2.close();
+                        stmt1.close();
+                   } 
+                }
+                //}
+                
+            }
+            rs.close();
+            st.close();
+           
+
+           
+       }
+       catch(Exception e){
+            e.printStackTrace();
+        }
+                                            
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        try{
+
+        Connection con=DBConnection.connect();
+        Statement st=con.createStatement();
+        String sql="Select Room_No from room_info";
+        ResultSet rst=st.executeQuery(sql);
+        while(rst.next()){
+           String t=rst.getString(1);
+           jComboBox1.addItem(t);
+        }rst.close();
+        String msql="Select course_code from exam_info";
+        ResultSet rs=st.executeQuery(msql);
+        while(rs.next()){
+           String t=rs.getString(1);
+           jComboBox5.addItem(t);
+        }
+        rs.close();
+        st.close();
+        con.close();
+       }
+       catch(Exception e){
+           e.printStackTrace();
+           
+       }
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -123,14 +572,31 @@ public class Arrangement_Student extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox5;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JTextField jTextField2;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     // End of variables declaration//GEN-END:variables
 }

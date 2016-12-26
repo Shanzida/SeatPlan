@@ -21,6 +21,7 @@ public class CourseStdFl extends javax.swing.JFrame {
      * Creates new form Semester
      */
     public CourseStdFl() {
+         super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -57,6 +58,7 @@ public class CourseStdFl extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -168,6 +170,8 @@ public class CourseStdFl extends javax.swing.JFrame {
         jLabel9.setBounds(330, 220, 70, 17);
         getContentPane().add(jTextField2);
         jTextField2.setBounds(410, 220, 90, 30);
+        getContentPane().add(jXDatePicker1);
+        jXDatePicker1.setBounds(410, 150, 110, 22);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -435,5 +439,6 @@ public class CourseStdFl extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     // End of variables declaration//GEN-END:variables
 }

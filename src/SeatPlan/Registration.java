@@ -24,6 +24,7 @@ public class Registration extends javax.swing.JFrame {
     public Registration() {
         	//Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 		//setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
         		setResizable(false);
@@ -57,6 +58,8 @@ public class Registration extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -115,7 +118,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 924, 330);
+        jLabel6.setBounds(0, 0, 924, 310);
 
         jMenu1.setText("Home");
         jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
@@ -154,6 +157,13 @@ public class Registration extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("About");
+
+        jMenuItem3.setText("About Developer");
+        jMenu4.add(jMenuItem3);
+
+        jMenuItem2.setText("About Software");
+        jMenu4.add(jMenuItem2);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -299,6 +309,8 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;

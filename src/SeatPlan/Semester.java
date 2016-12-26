@@ -21,6 +21,7 @@ public class Semester extends javax.swing.JFrame {
      * Creates new form Semester
      */
     public Semester() {
+        super("Examination Seating Management System");
         initComponents();
         setSize(780, 380);
                 setResizable(false);
@@ -73,12 +74,12 @@ public class Semester extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Year");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(230, 117, 42, 20);
+        jLabel5.setBounds(240, 90, 42, 20);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Semester ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 110, 100, 30);
+        jLabel1.setBounds(20, 90, 100, 30);
 
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel10.setText("New Course of Semester");
@@ -103,17 +104,17 @@ public class Semester extends javax.swing.JFrame {
         jC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Spring", "Summer", "Fall" }));
         getContentPane().add(jC);
-        jC.setBounds(110, 110, 100, 30);
+        jC.setBounds(120, 90, 100, 30);
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
         getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(290, 110, 100, 30);
+        jComboBox2.setBounds(290, 90, 100, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Exam");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(410, 120, 50, 17);
+        jLabel2.setBounds(410, 100, 50, 17);
 
         jComboBox4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Mid", "Final" }));
@@ -123,7 +124,7 @@ public class Semester extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox4);
-        jComboBox4.setBounds(470, 110, 110, 30);
+        jComboBox4.setBounds(470, 90, 110, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");

@@ -7,6 +7,14 @@ package SeatPlan;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,48 +44,77 @@ public class Exam_routine extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jComboBox2 = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Day", "Evening" }));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(200, 90, 110, 30);
+
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Exam Routine ");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(160, 20, 250, 34);
+        jLabel10.setBounds(160, 20, 250, 51);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Upload .CSV File");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 90, 120, 20);
+        jLabel2.setBounds(70, 150, 120, 20);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Browes...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
-        jButton1.setBounds(220, 90, 110, 30);
+        jButton1.setBounds(200, 140, 110, 30);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("save");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
-        jButton2.setBounds(260, 150, 63, 25);
+        jButton2.setBounds(620, 200, 63, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Shift");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(90, 90, 80, 30);
+
+        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(330, 140, 360, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Nice1.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -10, 850, 330);
+        jLabel1.setBounds(0, 0, 850, 370);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(640, 110, 0, 2);
 
@@ -96,14 +133,6 @@ public class Exam_routine extends javax.swing.JFrame {
                 jMenu1MenuSelected(evt);
             }
         });
-
-        jMenuItem2.setText("New Course");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
 
         jMenuItem5.setText("Student Info");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -135,6 +164,18 @@ public class Exam_routine extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu2);
 
+        jMenu6.setText("LogOut");
+        jMenu6.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu6MenuSelected(evt);
+            }
+        });
+        jMenuBar1.add(jMenu6);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -163,18 +204,60 @@ public class Exam_routine extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenu2MenuSelected
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        new Semester();
-        this.dispose();
-
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
         new Student_info();
         this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jFileChooser = new JFileChooser();
+        int result = jFileChooser.showOpenDialog(new JFrame());
+        File selectedFile = jFileChooser.getSelectedFile();
+        String filepath=selectedFile.getAbsolutePath();
+        System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        jTextField3.setText(filepath);
+       //new ExcelToDb(selectedFile.getAbsolutePath());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+           String Shift=(String)jComboBox2.getSelectedItem();
+
+        if(Shift.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Shift is mandatory.");
+            return;    
+        }
+        if(jTextField3.getText() == null || jTextField3.getText().equals("") || !jTextField3.getText().contains(".csv")){
+            JOptionPane.showMessageDialog(this, "Please browse the csv file.");
+            return;
+       }
+        try{
+           /*  Connection con=DBConnection.connect();
+            //int id=0;
+            Statement stmt=con.createStatement();
+            String checkSql="Select * from Semester";
+            ResultSet rs= stmt.executeQuery(checkSql);
+  
+            while(rs.next()){
+                 String id=rs.getString(1);
+            }rs.close();
+            stmt.close();
+            con.close();*/
+   
+         new ExcelToDb(jTextField3.getText(),Shift);
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenu6MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu6MenuSelected
+        // TODO add your handling code here:
+        new HomePage();
+        this.dispose();
+    }//GEN-LAST:event_jMenu6MenuSelected
 
     /**
      * @param args the command line arguments
@@ -221,16 +304,19 @@ public class Exam_routine extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
