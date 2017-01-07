@@ -6,6 +6,10 @@
 package SeatPlan;
 
 //import java.awt.Dimension;
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 //import java.awt.Toolkit;
 
 /**
@@ -13,6 +17,7 @@ package SeatPlan;
  * @author urmi
  */
 public class HomePage extends javax.swing.JFrame {
+ private static String  instance = null;
 
     /**
      * Creates new form HomePage
@@ -22,10 +27,13 @@ public class HomePage extends javax.swing.JFrame {
         initComponents();
         
         //setSize(780, 380);
-        		setResizable(false);
-		//Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-		//setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
-                       this.setVisible(true);
+        	setResizable(false);
+		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
+                this.setVisible(true);
+                instance="ppp";
+                       //jMenu3.setVisible(false);
+                       
     }
 
     /**
@@ -39,57 +47,49 @@ public class HomePage extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/3.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/ee.jpg"))); // NOI18N
 
-        jMenu1.setText("Home");
-        jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
+        jMenuBar1.setBackground(new java.awt.Color(102, 102, 255));
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jMenu5.setText("Home");
+        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu5MouseClicked(evt);
+            }
+        });
+        jMenu5.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
             public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu1MenuSelected(evt);
+                jMenu5MenuSelected(evt);
             }
         });
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu5);
 
-        jMenu2.setText("Registration");
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jMenu2MouseReleased(evt);
-            }
-        });
-        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
+        jMenu6.setText("Registration");
+        jMenu6.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
             public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu2MenuSelected(evt);
+                jMenu6MenuSelected(evt);
             }
         });
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenu6);
 
         jMenu3.setText("Login");
-        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu3MouseClicked(evt);
-            }
-        });
         jMenu3.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
@@ -111,9 +111,6 @@ public class HomePage extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem3);
 
-        jMenuItem2.setText("About Software");
-        jMenu4.add(jMenuItem2);
-
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -122,53 +119,47 @@ public class HomePage extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 901, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        // TODO add your handling code here:
-
-        
-    }//GEN-LAST:event_jMenu2ActionPerformed
-
-    private void jMenu2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseReleased
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jMenu2MouseReleased
-
-    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
-        // TODO add your handling code here:
-        new Registration();
-        this.dispose();
-    }//GEN-LAST:event_jMenu2MenuSelected
-
-    private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu1MenuSelected
-
-    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu3MouseClicked
-
-    private void jMenu3MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuSelected
-        // TODO add your handling code here:
-        new Login();
-        this.dispose();
-    }//GEN-LAST:event_jMenu3MenuSelected
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         new Developer();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenu5MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu5MenuSelected
+        // TODO add your handling code here:
+        new HomePage();
+        this.dispose();
+    }//GEN-LAST:event_jMenu5MenuSelected
+
+    private void jMenu6MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu6MenuSelected
+        // TODO add your handling code here:
+        new Registration();
+        this.dispose();
+    }//GEN-LAST:event_jMenu6MenuSelected
+
+    private void jMenu3MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuSelected
+        // TODO add your handling code here:\
+        new Login();
+        this.dispose();
+    }//GEN-LAST:event_jMenu3MenuSelected
                                  
     /**
      * @param args the command line arguments
@@ -199,20 +190,39 @@ public class HomePage extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HomePage().setVisible(true);
+        
+               /* SplashScreen S=new SplashScreen();
+
+		try
+		{
+        	 Thread.sleep(3000);
+			
+		}
+
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		S.dispose();*/
+                public void run() {
+                if(Singleton.getInstance()!= null){
+                    Singleton.setInstance();
+                    new HomePage().setVisible(true);
+                }
+                else
+                    System.out.println("hi");
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }

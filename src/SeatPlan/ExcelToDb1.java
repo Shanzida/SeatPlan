@@ -54,7 +54,9 @@
                                 Name=std[2];
 
                             System.out.println("SL_no = "+SL_no+" | ID="+ID+" | Name ="+Name+"| sem="+semester+" | section="+ section+"| year="+Year+"| course="+Course_code);    
-
+                            
+                            if(ID == null || ID.equals("")) continue;
+                            
                             String sql="INSERT INTO `studentinfo`(`Name`, `ID`,sec,year,semester,course_code) VALUES (?, ?, ?,?,?,?)";
                             PreparedStatement pstmt=con.prepareStatement(sql);
                             pstmt.setString (1, Name);

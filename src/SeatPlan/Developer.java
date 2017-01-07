@@ -20,11 +20,13 @@ public class Developer extends javax.swing.JFrame {
     public Developer() {
         super("Examination Seating Management System");
         initComponents();
-        setSize(780, 380);
+        setSize(900, 480);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 setResizable(false);
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
                 this.setVisible(true);
+                
     }
 
     /**
@@ -48,39 +50,45 @@ public class Developer extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("is done by the following students");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(80, 130, 300, 30);
+        jLabel4.setBounds(390, 190, 300, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("\"EXAMINATION SEATING MANAGEMENT SYSTEM\"");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 80, 470, 44);
+        jLabel3.setBounds(250, 120, 610, 44);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("The Project Work Entitled");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 10, 360, 50);
+        jLabel2.setBounds(270, 20, 490, 50);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Shanzida Nahid-141400011");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(70, 190, 250, 22);
+        jLabel5.setBounds(510, 250, 340, 22);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tamanna Nusrin Tisha-131400015 ");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(70, 230, 320, 30);
+        jLabel6.setBounds(510, 280, 320, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Shuborna Hossain-101400005 ");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(70, 274, 290, 22);
+        jLabel7.setBounds(510, 320, 290, 22);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/dev1.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/background-design-14-Cool-Backgrounds.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 730, 500);
+        jLabel1.setBounds(0, -10, 900, 560);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,6 +124,7 @@ public class Developer extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Developer().setVisible(true);
+                
             }
         });
     }

@@ -26,7 +26,7 @@ public class Registration extends javax.swing.JFrame {
 		//setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
         super("Examination Seating Management System");
         initComponents();
-        setSize(780, 380);
+        setSize(900, 500);
         		setResizable(false);
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
@@ -46,11 +46,13 @@ public class Registration extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
+        jComboBox1 = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -58,18 +60,18 @@ public class Registration extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("User Registration");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(123, 7, 220, 34);
+        jLabel10.setBounds(460, 20, 340, 51);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,48 +79,63 @@ public class Registration extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(320, 210, 80, 23);
+        jButton1.setBounds(690, 330, 100, 31);
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(150, 100, 250, 23);
+        jTextField2.setBounds(540, 170, 250, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Passward");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 130, 89, 17);
+        jLabel4.setBounds(410, 250, 89, 22);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setText("Confirm_Password");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Type ");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(420, 210, 89, 22);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Confirm Password");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 160, 131, 17);
+        jLabel5.setBounds(370, 290, 164, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("User_Name");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("User Name");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 70, 86, 17);
+        jLabel1.setBounds(400, 130, 120, 22);
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(150, 70, 250, 23);
+        jTextField1.setBounds(540, 130, 250, 30);
 
         jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(150, 130, 250, 23);
+        jPasswordField1.setBounds(540, 250, 250, 30);
 
         jPasswordField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jPasswordField2);
-        jPasswordField2.setBounds(150, 160, 250, 23);
+        jPasswordField2.setBounds(540, 290, 250, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Admin", "User" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(540, 210, 250, 30);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 100, 89, 17);
+        jLabel3.setBounds(420, 170, 89, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/background-design-14-Cool-Backgrounds.jpg"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 924, 310);
+        jLabel6.setBounds(0, -10, 910, 570);
 
         jMenu1.setText("Home");
         jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
@@ -158,11 +175,13 @@ public class Registration extends javax.swing.JFrame {
 
         jMenu4.setText("About");
 
-        jMenuItem3.setText("About Developer");
-        jMenu4.add(jMenuItem3);
-
-        jMenuItem2.setText("About Software");
-        jMenu4.add(jMenuItem2);
+        jMenuItem4.setText("About Developer");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem4);
 
         jMenuBar1.add(jMenu4);
 
@@ -177,6 +196,13 @@ public class Registration extends javax.swing.JFrame {
         String Email=jTextField2.getText();
         String Password =jPasswordField1.getText();
         String Confirm_Password =jPasswordField2.getText();
+        String type=(String)jComboBox1.getSelectedItem();
+
+    
+        if(type.equalsIgnoreCase("Select")){
+            JOptionPane.showMessageDialog(this, "Registration type is mandatory.");
+            return;
+        }
         
         if(User_Name.equals("")){
             JOptionPane.showMessageDialog(this, "User_Name is mandatory.");
@@ -196,7 +222,7 @@ public class Registration extends javax.swing.JFrame {
             return;
        }
        
-       
+      if(Password.equals(Confirm_Password)){  
         try{
             Connection con=DBConnection.connect();
            // int id=0;
@@ -215,11 +241,12 @@ public class Registration extends javax.swing.JFrame {
            // int ask=JOptionPane.showConfirmDialog(this, "Do you want to save?","Confirm",0);
             
             if(user==null){
-                String insertSql="insert into registration (user_name,email,password)values(?,?,?)";
+                String insertSql="insert into registration (user_name,email,password,type)values(?,?,?,?)";
                 PreparedStatement pstmt=con.prepareStatement(insertSql);
                 pstmt.setString (1, User_Name);
                 pstmt.setString(2, Email);
                 pstmt.setString(3, Password);
+                 pstmt.setString(4, type);
                 int a=pstmt.executeUpdate();
                 if(a>0){
                     JOptionPane.showMessageDialog(this, "Saved Successfully");
@@ -234,7 +261,12 @@ public class Registration extends javax.swing.JFrame {
         }
         catch(Exception e){
             e.printStackTrace();
-        }
+     }                                        
+      } else{
+      JOptionPane.showMessageDialog(this, "Password does not match."); 
+      new Registration();
+      this.dispose();
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
@@ -252,6 +284,11 @@ public class Registration extends javax.swing.JFrame {
         new Login();
         this.dispose();
     }//GEN-LAST:event_jMenu3MenuSelected
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        new Developer();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
  private void jTextField2MouseReleased(java.awt.event.MouseEvent evt) {                                          
         // TODO add your handling code here:
        
@@ -259,58 +296,24 @@ public class Registration extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-            
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registration().setVisible(true);
-                
-               // new Registration().set
-                
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;

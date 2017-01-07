@@ -24,7 +24,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         super("Examination Seating Management System");
         initComponents();
-        setSize(780, 380);
+        setSize(900, 500);
                 setResizable(false);
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(d.width/2-getWidth()/2, d.height/2 - getHeight()/2);
@@ -52,32 +52,26 @@ public class Login extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("User Name");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(20, 120, 75, 17);
+        jLabel7.setBounds(360, 140, 120, 22);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Passward");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(20, 160, 66, 17);
+        jLabel8.setBounds(360, 200, 100, 22);
 
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jTextField6);
-        jTextField6.setBounds(110, 120, 380, 30);
+        jTextField6.setBounds(480, 140, 380, 30);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,26 +79,25 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(340, 210, 120, 25);
+        jButton1.setBounds(730, 300, 120, 31);
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel10.setText("User Login");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(220, 10, 220, 34);
+        jLabel10.setBounds(480, 10, 220, 51);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Still not a member?Go to Registration");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(130, 70, 309, 22);
+        jLabel1.setBounds(360, 80, 480, 29);
 
         jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(110, 160, 380, 30);
+        jPasswordField1.setBounds(480, 200, 380, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Cool_Trendy_Attitude_Colorful_fb_Timeline_Covers_girls_Trendy_Attitude_Cover_Photos_for_Facebook_Timeline-211.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/background-design-14-Cool-Backgrounds.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -10, 740, 330);
+        jLabel2.setBounds(0, -60, 910, 570);
 
         jMenu1.setText("Home");
         jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
@@ -132,16 +125,13 @@ public class Login extends javax.swing.JFrame {
 
         jMenu4.setText("About");
 
-        jMenuItem3.setText("About Developer");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setText("About Developer");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem3);
-
-        jMenuItem2.setText("About Software");
-        jMenu4.add(jMenuItem2);
+        jMenu4.add(jMenuItem4);
 
         jMenuBar1.add(jMenu4);
 
@@ -150,57 +140,70 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String User_Name =jTextField6.getText();
         String Password =jPasswordField1.getText();
+        String LogInType="Admin";
+        
         if(User_Name.equals("")){
             JOptionPane.showMessageDialog(this, "User_Name is mandatory.");
             return;
         }
         if(!User_Name.equals("")){
 
-       if(Password.equals("")){
-            JOptionPane.showMessageDialog(this, "Password is mandatory.");
-            return;
-       }
-          }
+            if(Password.equals("")){
+                JOptionPane.showMessageDialog(this, "Password is mandatory.");
+                return;
+            }
+        }
        try{
+           
             Connection con=DBConnection.connect();
            // int id=0;
             //int ask=JOptionPane.showConfirmDialog(this, "Do you want to save?","Confirm",0);
-            String user=null,pass=null;
+            String user=null,pass=null,type=null;
             Statement stmt=con.createStatement();
-            String checkSql="select * from Registration where user_name='" +User_Name+"'"+";" ;
-            ResultSet rs= stmt.executeQuery(checkSql);
-            while(rs.next()){
-                // id=rs.getInt(1);
+            String Sql="select * from Registration where user_name='" +User_Name+"'"+";" ;
+            ResultSet rs= stmt.executeQuery(Sql);
+            while(rs.next()){ 
                  user=rs.getString(1);
                  pass=rs.getString(3);
-                 //jTextField1.setText(User_Name);
+                 
+            
             }
             rs.close();
+            
+            String checkSql="select type from Registration where user_name='" +User_Name+"'"+";" ;
+            ResultSet rst= stmt.executeQuery(checkSql);
+            while(rst.next()){
+                 type=rst.getString(1);
+            }
+            rst.close();
             stmt.close();
-            if(User_Name.equals(user) && Password.equals(pass))
+       if(User_Name.equals(user) && Password.equals(pass))
                         {
-                             //JOptionPane.showMessageDialog(null,"  Welcome");                       
+                             //JOptionPane.showMessageDialog(null,"  Welcome");  
+                          if(LogInType.equals(type)){
                              new Entry();
                              this.dispose();
+                          }
+                          else{
+                             new userEntry();
+                             this.dispose();
+                          }
                         }
                         else
                         {
                     
-                                JOptionPane.showMessageDialog(null,"Invalid User Name and Password");
-                                new Login();
-                                this.dispose();
+                            JOptionPane.showMessageDialog(null,"Invalid User Name and Password");
+                            new Login();
+                            this.dispose();
                                 
 
                         }
             con.close();
+           //new Singleton(User_Name,Password);
     }//GEN-LAST:event_jButton1ActionPerformed
     catch(Exception e){
             e.printStackTrace();
@@ -218,45 +221,16 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenu2MenuSelected
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         new Developer();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
      
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
+   
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -269,8 +243,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables

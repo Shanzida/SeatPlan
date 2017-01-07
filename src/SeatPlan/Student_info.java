@@ -57,18 +57,27 @@ public class Student_info extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
         jTextField3 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jComboBox5 = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -83,6 +92,11 @@ public class Student_info extends javax.swing.JFrame {
 
         jC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Spring", "Summer", "Fall" }));
+        jC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCActionPerformed(evt);
+            }
+        });
         getContentPane().add(jC);
         jC.setBounds(130, 70, 100, 30);
 
@@ -100,6 +114,11 @@ public class Student_info extends javax.swing.JFrame {
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jComboBox2);
         jComboBox2.setBounds(300, 70, 100, 30);
 
@@ -113,7 +132,7 @@ public class Student_info extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Title");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(240, 120, 40, 17);
+        jLabel6.setBounds(250, 120, 40, 17);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Browes...");
@@ -135,21 +154,22 @@ public class Student_info extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Section");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 120, 70, 20);
+        jLabel7.setBounds(60, 120, 70, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Course_Code");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(430, 70, 110, 20);
-
-        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(130, 120, 90, 30);
+        jLabel5.setBounds(420, 80, 110, 20);
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField1);
         jTextField1.setBounds(300, 120, 360, 30);
+
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(130, 120, 100, 30);
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         getContentPane().add(jTextField3);
@@ -173,7 +193,7 @@ public class Student_info extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jComboBox5);
-        jComboBox5.setBounds(550, 70, 100, 30);
+        jComboBox5.setBounds(540, 80, 120, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SeatPlan/Nice1.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -181,21 +201,27 @@ public class Student_info extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(640, 110, 0, 2);
 
-        jMenu1.setText("Entry");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jMenu1MouseReleased(evt);
-            }
-        });
-        jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
+        jMenu3.setText("Home");
+        jMenu3.addMenuListener(new javax.swing.event.MenuListener() {
             public void menuCanceled(javax.swing.event.MenuEvent evt) {
             }
             public void menuDeselected(javax.swing.event.MenuEvent evt) {
             }
             public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu1MenuSelected(evt);
+                jMenu3MenuSelected(evt);
             }
         });
+        jMenuBar1.add(jMenu3);
+
+        jMenu1.setText("Entry");
+
+        jMenuItem5.setText("Student Info");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
 
         jMenuItem6.setText("Exam Routine");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -205,27 +231,67 @@ public class Student_info extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem6);
 
-        jMenuItem3.setText("Update");
+        jMenu5.setText("Delete");
+
+        jMenuItem10.setText("Exam Routine ");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem10);
+
+        jMenuItem8.setText("Student Info");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem8);
+
+        jMenu1.add(jMenu5);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Arrangement");
+
+        jMenuItem2.setText("Create Arrangement");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem3.setText("Arrangement Report");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu2.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Arrangement");
-        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu2MenuSelected(evt);
+        jMenuItem7.setText("Delete Arrangement");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
             }
         });
+        jMenu2.add(jMenuItem7);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("About");
+
+        jMenuItem4.setText("About Developer");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu4);
 
         jMenu6.setText("LogOut");
         jMenu6.addMenuListener(new javax.swing.event.MenuListener() {
@@ -243,35 +309,6 @@ public class Student_info extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-       // System.out.println("Hiiii");
-        new CourseUpdate();
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenu1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu1MouseReleased
-
-    private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
-        // TODO add your handling code here:
-       //new Semester();
-       //  this.dispose();
-    }//GEN-LAST:event_jMenu1MenuSelected
-
-    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
-        // TODO add your handling code here:
-        new Arrangement_Student();
-        this.dispose();
-    }//GEN-LAST:event_jMenu2MenuSelected
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        // TODO add your handling code here:
-        new Exam_routine();
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -291,13 +328,25 @@ public class Student_info extends javax.swing.JFrame {
             Connection con=DBConnection.connect();
             Statement st=con.createStatement();
             String course_code=(String)jComboBox5.getSelectedItem();
-            String msql="Select course_title from course_table where course_code='"+course_code+"'";
+            String msql="Select title from exam_info where course_code='"+course_code+"'";
             ResultSet rs=st.executeQuery(msql);
             while(rs.next()){
                 String t=rs.getString(1);
                 jTextField1.setText(t);
-            }rs.close();
+            }
+            rs.close();
             st.close();
+            
+            Statement str=con.createStatement();
+            jComboBox1.removeAllItems();
+            jComboBox1.addItem("Select");
+            String tsql="Select sec from exam_info where course_code='"+course_code+"' order by sec";
+            ResultSet rrs=str.executeQuery(tsql);
+            while(rrs.next()){
+                String ts=rrs.getString(1);
+                jComboBox1.addItem(ts);
+            }rrs.close();
+            str.close();
             con.close();
 
         }
@@ -315,7 +364,7 @@ public class Student_info extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String semester =(String)jC.getSelectedItem();
-        String section=jTextField2.getText();
+        String section=(String)jComboBox1.getSelectedItem();
         //String Department =jTextField4.getText();
         String Year=(String)jComboBox2.getSelectedItem();
         String Course_code=(String)jComboBox5.getSelectedItem();
@@ -332,7 +381,7 @@ public class Student_info extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Course code is mandatory.");
             return;
        }
-       if(section.equals("")){
+       if(section.equalsIgnoreCase("Select")){
             JOptionPane.showMessageDialog(this, "Section is mandatory.");
             return;
         }
@@ -351,15 +400,17 @@ public class Student_info extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        String Year=(String)jComboBox2.getSelectedItem();
+        String semester ="";
          int i;
           for(i=2016;i<=2040;i++){
           jComboBox2.addItem(""+i);
         }
-        try{
+       /* try{
 
         Connection con=DBConnection.connect();
         Statement st=con.createStatement();
-        String msql="Select course_code from exam_info";
+        String msql="Select course_code from exam_info Where year='"+Year+"'and semester='"+semester+"'";
         ResultSet rs=st.executeQuery(msql);
         while(rs.next()){
            String t=rs.getString(1);
@@ -372,19 +423,107 @@ public class Student_info extends javax.swing.JFrame {
        catch(Exception e){
            e.printStackTrace();
            
-       }
+       }*/
     }//GEN-LAST:event_formWindowOpened
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        new Student_info();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        new Exam_routine();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        new ExamRoutineUp();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        new StudentInfoUp();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        new Arrangement_Student_New();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        new Developer();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenu3MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuSelected
+        // TODO add your handling code here:
+        new Entry();
+        this.dispose();
+    }//GEN-LAST:event_jMenu3MenuSelected
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        new ArrangementUp();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+       getCourseFromExamInfo();
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCActionPerformed
+        // TODO add your handling code here:
+        getCourseFromExamInfo();
+    }//GEN-LAST:event_jCActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        new ArrangementReport();
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void getCourseFromExamInfo(){
+         try{
+            jComboBox5.removeAllItems();
+            jComboBox5.addItem("Select");
+            jTextField1.setText("");
+            jComboBox1.removeAllItems();
+
+            Connection con=DBConnection.connect();
+            Statement st=con.createStatement();
+            String Year=(String)jComboBox2.getSelectedItem();
+            String semester=(String)jC.getSelectedItem();
+            String msql="Select distinct course_code from exam_info Where year='"+Year+"'and semester='"+semester+"' order by course_code";
+            ResultSet rs=st.executeQuery(msql);
+            while(rs.next()){
+              String t=rs.getString(1);
+              jComboBox5.addItem(t);
+            }rs.close();
+            st.close();
+            con.close();
+
+        }
+         catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    /* public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+        /* try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -406,17 +545,18 @@ public class Student_info extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Student_info().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     public static javax.swing.JComboBox jC;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox5;
     private javax.swing.JLabel jLabel1;
@@ -429,14 +569,22 @@ public class Student_info extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
